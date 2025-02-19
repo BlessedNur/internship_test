@@ -1,4 +1,4 @@
-// Required dependencies
+// Required dependencies 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -8,11 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// mongodb connnection
 mongoose
   .connect(
     "mongodb+srv://blessednur67:HOODQUAN67@cluster0.wftw5hq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
+  // routes
     app.use("/api/books", bookRoutes);
     console.log("Connected to MongoDB");
   })
