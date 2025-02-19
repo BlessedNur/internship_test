@@ -5,6 +5,7 @@ const cors = require("cors");
 const bookRoutes = require("./src/routes/books.routes");
 const app = express();
 
+// cors (optional) for frontend access 
 app.use(cors());
 app.use(express.json());
 
@@ -21,6 +22,7 @@ mongoose
   .catch((error) => console.error("Error connecting to MongoDB:", error));
 
 const PORT = 5000;
+// server initialization
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
